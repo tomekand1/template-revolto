@@ -6,8 +6,8 @@
       </a>
     </div>
     <div class="clearfix content-chooser">
-      <h3 class="iq-font-black">Sofbox Awesome Color</h3>
-      <p>This color combo available inside whole template. You can change on your wish, Even you can create your own with limitless possibilities!</p>
+      <h3 class="iq-font-black">Choose color Color</h3>
+      <p>Choose color for test!</p>
       <ul class="iq-colorChange clearfix">
         <li
           v-for="(color,index) of colors"
