@@ -28,8 +28,8 @@
                     :class="option.active !== undefined && option.active ? ' active ' : ''"
                     :href="option.href"
                     @click="jumpTo(option.href)"
-                    :data-toggle="data"
-                    data-target="#navbarSupportedContent"
+                    :data-toggle="dataSend"
+                    :data-target="dataSend2"
                   >
                     {{ option.title }}
                     <i
@@ -66,7 +66,8 @@
 export default {
   data() {
     return {
-      data: "collapse"
+      dataSend: "collapse",
+      dataSend2: "#navbarSupportedContent"
     };
   },
   name: "HeaderStyle1",
@@ -80,12 +81,16 @@ export default {
     // eslint-disable-next-line vue/require-default-prop,vue/require-prop-types
     styledLogo: { Boolean: true }
   },
+  computed: {},
   created() {
     this.$root.$on("bv::scrollspy::activate", this.onActivate);
     if (window.innerWidth <= 989) {
-      this.data = "collapse";
+      console.log("hi");
+      this.dataSend = "collapse";
+      this.dataSend2 = "#navbarSupportedContent";
     } else {
-      this.data = "";
+      this.dataSend = "";
+      this.dataSend2 = "";
     }
   },
   methods: {
