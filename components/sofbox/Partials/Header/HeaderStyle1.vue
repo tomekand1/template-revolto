@@ -7,7 +7,7 @@
         <div class="col-sm-12">
           <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#">
-              <img :id="styledLogo ? 'logo_img' : ''" class="img-fluid" :src="logoImg" alt="#">
+              <img :id="styledLogo ? 'logo_img' : ''" class="img-fluid" :src="logoImg" alt="#" />
             </a>
             <button
               class="navbar-toggler"
@@ -15,7 +15,7 @@
               data-toggle="collapse"
               data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
-              aria-expanded="false"
+              aria-expanded="true"
               aria-label="Toggle navigation"
             >
               <span class="ion-navicon" />
@@ -23,9 +23,19 @@
             <div id="navbarSupportedContent" class="collapse navbar-collapse">
               <ul class="navbar-nav mr-auto w-100 justify-content-end menu">
                 <li v-for="(option,index) in navItemList" :key="index" class="nav-item menu-item">
-                  <a class="nav-link" :class="option.active !== undefined && option.active ? ' active ' : ''" :href="option.href" @click="jumpTo(option.href)">
+                  <a
+                    class="nav-link"
+                    :class="option.active !== undefined && option.active ? ' active ' : ''"
+                    :href="option.href"
+                    @click="jumpTo(option.href)"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                  >
                     {{ option.title }}
-                    <i v-if="option.children" class="fa fa-angle-down toggledrop" aria-hidden="true" />
+                    <i
+                      v-if="option.children"
+                      class="fa fa-angle-down toggledrop"
+                    />
                   </a>
                   <ul v-if="option.children" class="sub-menu" style="display: none;">
                     <li
@@ -53,7 +63,7 @@
 
 <script>
 export default {
-  name: 'HeaderStyle1',
+  name: "HeaderStyle1",
   props: {
     // eslint-disable-next-line vue/require-default-prop
     className: String,
@@ -64,18 +74,27 @@ export default {
     // eslint-disable-next-line vue/require-default-prop,vue/require-prop-types
     styledLogo: { Boolean: true }
   },
-  created () {
-    this.$root.$on('bv::scrollspy::activate', this.onActivate)
+  created() {
+    this.$root.$on("bv::scrollspy::activate", this.onActivate);
   },
   methods: {
-    onActivate (target) {
-      console.log('Received event: "bv::scrollspy::activate" for target ', target)
+    onActivate(target) {
+      console.log(
+        'Received event: "bv::scrollspy::activate" for target ',
+        target
+      );
     },
-    jumpTo (href) {
-      window.$('html, body').stop().animate({
-        scrollTop: window.$(href).offset().top
-      }, 1500)
+    jumpTo(href) {
+      window
+        .$("html, body")
+        .stop()
+        .animate(
+          {
+            scrollTop: window.$(href).offset().top
+          },
+          1500
+        );
     }
   }
-}
+};
 </script>
