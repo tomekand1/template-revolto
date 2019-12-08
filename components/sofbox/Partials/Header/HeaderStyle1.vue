@@ -15,7 +15,7 @@
               data-toggle="collapse"
               data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
-              aria-expanded="true"
+              aria-expanded="false"
               aria-label="Toggle navigation"
             >
               <span class="ion-navicon" />
@@ -35,6 +35,7 @@
                     <i
                       v-if="option.children"
                       class="fa fa-angle-down toggledrop"
+                      aria-hidden="true"
                     />
                   </a>
                   <ul v-if="option.children" class="sub-menu" style="display: none;">
