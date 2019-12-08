@@ -28,7 +28,7 @@
                     :class="option.active !== undefined && option.active ? ' active ' : ''"
                     :href="option.href"
                     @click="jumpTo(option.href)"
-                    data-toggle="collapse"
+                    :data-toggle="data"
                     data-target="#navbarSupportedContent"
                   >
                     {{ option.title }}
@@ -64,6 +64,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      data: "collapse"
+    };
+  },
   name: "HeaderStyle1",
   props: {
     // eslint-disable-next-line vue/require-default-prop
@@ -77,6 +82,11 @@ export default {
   },
   created() {
     this.$root.$on("bv::scrollspy::activate", this.onActivate);
+    if (window.innerWidth <= 989) {
+      this.data = "collapse";
+    } else {
+      this.data = "";
+    }
   },
   methods: {
     onActivate(target) {
