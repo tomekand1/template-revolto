@@ -38,7 +38,7 @@
             <div class="counter-info-img">
               <img
                 class="center-block"
-                :src="require('../../assets/images/drive/ceny-pradu.jpg')"
+                :src="require('../../assets/images/drive/ceny-pradu.png')"
                 alt="#"
               />
             </div>
