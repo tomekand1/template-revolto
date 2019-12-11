@@ -3,6 +3,9 @@ module.exports = {
   /*
    ** Headers of the page
    */
+  env: {
+    baseUrl: 'http://localhost:9090'
+  },
   head: {
     title: process.env.npm_package_name || '',
     meta: [{

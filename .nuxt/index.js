@@ -12,10 +12,10 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_workbox_28b04b2e from 'nuxt_plugin_workbox_28b04b2e' // Source: .\\workbox.js (mode: 'client')
-import nuxt_plugin_bootstrapvue_18f05ec1 from 'nuxt_plugin_bootstrapvue_18f05ec1' // Source: .\\bootstrap-vue.js (mode: 'all')
-import nuxt_plugin_axios_72bb9adc from 'nuxt_plugin_axios_72bb9adc' // Source: .\\axios.js (mode: 'all')
-import nuxt_plugin_sofbox_25d6e742 from 'nuxt_plugin_sofbox_25d6e742' // Source: ..\\plugins\\sofbox.js (mode: 'all')
+import nuxt_plugin_workbox_dcdaa162 from 'nuxt_plugin_workbox_dcdaa162' // Source: ./workbox.js (mode: 'client')
+import nuxt_plugin_bootstrapvue_ddb533bc from 'nuxt_plugin_bootstrapvue_ddb533bc' // Source: ./bootstrap-vue.js (mode: 'all')
+import nuxt_plugin_axios_63612af3 from 'nuxt_plugin_axios_63612af3' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_sofbox_25d6e742 from 'nuxt_plugin_sofbox_25d6e742' // Source: ../plugins/sofbox.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -168,16 +168,16 @@ async function createApp (ssrContext) {
 
   // Plugin execution
 
-  if (process.client && typeof nuxt_plugin_workbox_28b04b2e === 'function') {
-    await nuxt_plugin_workbox_28b04b2e(app.context, inject)
+  if (process.client && typeof nuxt_plugin_workbox_dcdaa162 === 'function') {
+    await nuxt_plugin_workbox_dcdaa162(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_bootstrapvue_18f05ec1 === 'function') {
-    await nuxt_plugin_bootstrapvue_18f05ec1(app.context, inject)
+  if (typeof nuxt_plugin_bootstrapvue_ddb533bc === 'function') {
+    await nuxt_plugin_bootstrapvue_ddb533bc(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_72bb9adc === 'function') {
-    await nuxt_plugin_axios_72bb9adc(app.context, inject)
+  if (typeof nuxt_plugin_axios_63612af3 === 'function') {
+    await nuxt_plugin_axios_63612af3(app.context, inject)
   }
 
   if (typeof nuxt_plugin_sofbox_25d6e742 === 'function') {

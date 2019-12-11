@@ -45,7 +45,7 @@ export default {
             "W wielu przypadkach instalację fotowoltaiczną możesz odliczyć od podatku. ",
           description4: "Podniesienie wartości nieruchomości.",
           description5:
-            "W przypadku instalacji 2-10 kWh możesz liczyć na wsparcie z programu „Mój Prąd” (do wyczerpania alokacji środków)"
+            "W przypadku instalacji 2-10 kWh możesz liczyć na wsparcie z programu „Mój Prąd” (do wyczerpania alokacji środków)."
         },
         {
           icon: "ion-earth",
@@ -91,38 +91,38 @@ export default {
         const h = this.$createElement;
         // Using HTML string
         // More complex structure
-        const messageVNode = h("div", { class: ["center"] }, [
+        const messageVNode = h("div", { class: ["w3-ul w3-card-4"] }, [
           h("h1", { class: ["text-center", blog.icon] }),
           h("h4", { class: ["title iq-tw-5"] }, [h("strong", {}, blog.title)]),
           h("br", { class: ["text-left"] }),
-          h("p", { class: ["text-left"] }, [h("p", {}, blog.description)]),
+          h("li", { class: ["textModal"] }, [h("li", {}, blog.description)]),
           h(
-            "p",
-            { class: ["text-left"] },
+            "li",
+            { class: ["textModal"] },
 
             [h("strong", {}, blog.description2)]
           ),
           h(
-            "p",
-            { class: ["text-left"] },
+            "li",
+            { class: ["textModal"] },
 
-            [h("p", {}, blog.description3)]
+            [h("li", {}, blog.description3)]
           ),
           h(
-            "p",
-            { class: ["text-left"] },
+            "li",
+            { class: ["textModal"] },
 
             [h("strong", {}, blog.description4)]
           ),
           h(
-            "p",
-            { class: ["text-left"] },
+            "li",
+            { class: ["textModal"] },
 
-            [h("p", {}, blog.description5)]
+            [h("li", {}, blog.description5)]
           ),
           h(
-            "p",
-            { class: ["text-left"] },
+            "li",
+            { class: ["textModal"] },
 
             [h("strong", {}, blog.description6)]
           )
@@ -138,3 +138,10 @@ export default {
   }
 };
 </script>
+
+<style>
+.textModal {
+  list-style-position: outside;
+  list-style-image: none;
+}
+</style>

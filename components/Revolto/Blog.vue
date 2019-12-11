@@ -14,8 +14,9 @@
           <div class="col-sm-12">
             <div
               class="owl-carousel"
-              data-autoplay="true"
-              data-items="4"
+              data-nav="true"
+              data-dots="false"
+              data-items="3"
               data-items-laptop="3"
               data-items-tab="2"
               data-items-mobile="2"
@@ -38,7 +39,16 @@
                     <h5 class="iq-tw-7 iq-mb-10">{{blog.title}}</h5>
                   </div>
                   <div slot="cardBody">
-                    <p>{{blog.description.slice(0,100)+"..."}}</p>
+                    <p>{{blog.description.slice(0,25)+"..."}}</p>
+                  </div>
+                  <div slot="cardFooter">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <a href="javascript:void(0)">
+                          <i class="fa fa-calendar" aria-hidden="true" /> 12 Aug 2019
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </CardStyle1>
               </div>

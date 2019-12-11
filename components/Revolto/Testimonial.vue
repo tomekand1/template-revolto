@@ -29,34 +29,9 @@
                 <div slot="cardMedia"></div>
                 <div slot="cardHeader">
                   <h5 class="iq-tw-6">Jason Adams</h5>
-                  <span class="sub-title">CEO, Sofbox</span>
                 </div>
                 <div slot="cardBody">
-                  <p>Excellent customer service and best savings on our energy bills to date. Glad I came across this website.</p>
-                </div>
-              </CardStyle7>
-            </div>
-            <div class="item">
-              <CardStyle7>
-                <div slot="cardMedia"></div>
-                <div slot="cardHeader">
-                  <h5 class="iq-tw-6">Jenny Adams</h5>
-                  <span class="sub-title">CEO, Sofbox</span>
-                </div>
-                <div slot="cardBody">
-                  <p>Curtis ci8 has been very helpful and I'm happy with the service he has given me today. Thank you .</p>
-                </div>
-              </CardStyle7>
-            </div>
-            <div class="item">
-              <CardStyle7>
-                <div slot="cardMedia"></div>
-                <div slot="cardHeader">
-                  <h5 class="iq-tw-6">John Deo</h5>
-                  <span class="sub-title">CEO, Sofbox</span>
-                </div>
-                <div slot="cardBody">
-                  <p>Great experience with Fivestars, really easy to use. A lot of good rewards in my favorite restaurants.</p>
+                  <p>Excellent customer service and best savings on our energy bills</p>
                 </div>
               </CardStyle7>
             </div>

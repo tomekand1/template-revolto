@@ -3,8 +3,8 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _31d1752d = () => interopDefault(import('..\\pages\\revolto\\index.vue' /* webpackChunkName: "pages_revolto_index" */))
-const _1fdd3168 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
+const _075bdd12 = () => interopDefault(import('../pages/revolto/index.vue' /* webpackChunkName: "pages/revolto/index" */))
+const _02e2c34b = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 Vue.use(Router)
 
@@ -17,11 +17,11 @@ export const routerOptions = {
 
   routes: [{
     path: "/revolto",
-    component: _31d1752d,
+    component: _075bdd12,
     name: "revolto"
   }, {
     path: "/",
-    component: _1fdd3168,
+    component: _02e2c34b,
     name: "index"
   }],
 

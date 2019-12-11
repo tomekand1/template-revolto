@@ -7,7 +7,7 @@
           v-model="mailData.name"
           class="require"
           type="text"
-          placeholder="Imie*"
+          placeholder="Imię*"
           name="name"
           required
         />
@@ -18,7 +18,7 @@
           v-model="mailData.email"
           class="require"
           type="email"
-          placeholder="Email*"
+          placeholder="Mail*"
           name="email"
           required
         />
@@ -40,31 +40,32 @@
           id="contact_message"
           v-model="mailData.message"
           class="input-message require"
-          placeholder="Wiadomośc*"
+          placeholder="Wiadomość*"
           rows="5"
           name="message"
           required
         ></textarea>
       </div>
-      <div class="section-field iq-mt-20"></div>
-      <button id="submit" name="submit" type="submit" value="Send" @click="onSubmit()">Send Message</button>
-      <div id="success" class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Thank You, Your message has been received.</strong>.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+
+      <button
+        id="submit"
+        name="submit"
+        type="submit"
+        value="Send"
+        :class="buttonDis ? 'button iq-mt-15 disabled' : 'button iq-mt-15 '"
+      >Wyślij</button>
     </div>
   </form>
 </template>
 
 <script>
 import axios from "axios";
+
 export default {
   name: "ContactForm",
   data() {
     return {
-      buttonDis: false,
+      buttonDis: true,
       mailData: {
         name: "",
         email: "",
@@ -75,15 +76,23 @@ export default {
   },
   methods: {
     onSubmit($event) {
-      axios.post(`${VUE_APP_API_PATH}/api/user/`, this.mailData).then(res => {
-        console.log(res);
-      });
+      axios
+        .post(`${process.env.baseUrl}/api/mail`, this.mailData)
+        .then(res => {
+          swal({
+            title: "Email został pomyślnie wysłany.",
+            icon: "success",
+            button: "ok"
+          });
+          this.clearData();
+        })
+        .catch(console.error());
     },
     clearData() {
-      this.name = "";
-      this.email = "";
-      this.phone = "";
-      this.message = "";
+      this.mailData.name = "";
+      this.mailData.email = "";
+      this.mailData.phone = "";
+      this.mailData.message = "";
     }
   }
 };

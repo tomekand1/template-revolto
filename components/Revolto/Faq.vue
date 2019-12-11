@@ -34,7 +34,7 @@
               </div>
             </div>
 
-            <div class="iq-accordion" v-for="question in questions">
+            <div class="iq-accordion" v-for="(question,index) in questions" :key="index">
               <a
                 href="javascript:void(0)"
                 class="accordion-title iq-tw-7 iq-font-grey"
