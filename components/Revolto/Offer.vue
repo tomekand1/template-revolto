@@ -24,6 +24,7 @@
         </div>
       </div>
     </div>
+
     <div class="container">
       <div>
         <div class="heading-title white"></div>
@@ -38,7 +39,7 @@
             <div class="counter-info-img">
               <img
                 class="center-block"
-                :src="require('../../assets/images/drive/ceny-pradu.jpg')"
+                :src="require('../../assets/images/drive/ceny-pradu.png')"
                 alt="#"
               />
             </div>
@@ -55,7 +56,7 @@
       <div class="counter-info iq-mt-60 iq-pt-60">
         <div class="row">
           <div class="col-lg-6">
-            <p class="iq-mt-30">{{this.$store.state.dataToPull.offer.description2}}</p>
+            <p class="iq-mt-30">{{this.$store.state.dataToPull.offer.description3}}</p>
           </div>
           <div class="col-lg-6">
             <div class="counter-info-img">

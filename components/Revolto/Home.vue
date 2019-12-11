@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="banner-objects">
-      <span
+      <!-- <span
         class="banner-objects-01"
         data-bottom="transform:translatey(50px)"
         data-top="transform:translatey(-50px);"
@@ -33,7 +33,7 @@
       </span>
       <span class="banner-objects-02 iq-fadebounce">
         <span class="iq-round" />
-      </span>
+      </span>-->
       <span class="banner-objects-03 iq-fadebounce">
         <span class="iq-round" />
       </span>

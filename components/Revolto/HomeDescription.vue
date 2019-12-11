@@ -8,8 +8,14 @@
           </div>
         </div>
       </div>
+
       <div class="row">
-        <div v-for="(item,index) of list" :key="index" class="col-sm-12 col-lg-3 col-md-6 iq-mb-30">
+        <div
+          @click="openInfo(item)"
+          v-for="(item,index) of list"
+          :key="index"
+          class="col-sm-12 col-lg-3 col-md-6 iq-mb-30"
+        >
           <CardStyle6>
             <i slot="cardMedia" aria-hidden="true" :class="item.icon"></i>
             <div slot="cardBody">
@@ -29,47 +35,106 @@ export default {
     return {
       list: [
         {
-          icon: "ion-android-add-circle",
-          title: "High Resolution",
-          description: "Provided with high resolution images."
+          icon: "ion-android-cart",
+          title: "Finansowe",
+          description:
+            "Fotowoltaika w domu oznacza, że możesz zyskać niezależność od podwyżek cen prądu przez co najmniej 25 lat",
+          description2:
+            "Moduły fotowoltaiczne tworzące panel wytwarzają prąd ze słońca. ",
+          description3:
+            "W wielu przypadkach instalację fotowoltaiczną możesz odliczyć od podatku. ",
+          description4: "Podniesienie wartości nieruchomości.",
+          description5:
+            "W przypadku instalacji 2-10 kWh możesz liczyć na wsparcie z programu „Mój Prąd” (do wyczerpania alokacji środków)"
         },
         {
-          icon: "ion-ios-settings",
-          title: "Color Schemes",
-          description: "You can use color schemes as you need."
+          icon: "ion-earth",
+          title: "Ekologiczne",
+          description:
+            "Czyste źródło energii – moduły fotwoltaiczne nie emitują zanieczyszczeń, można je także poddać recyklingowi",
+          description2:
+            "Energia słoneczna jest odnawialna i zrównoważona, co oznacza, że nie może jej zabraknąć, w przeciwieństwie do paliw kopalnych, które skończą się za kilkadziesiąt lat, zrównoważona oznacza możliwość zaspokojenia potrzeb współczesności bez narażania potrzeb przyszłych pokoleń.",
+          description3:
+            "Dostępność czystej energii – światło słoneczne jest dostępne w każdym miejscu na kuli ziemskiej i może być łatwo wykorzystane w ciągu dnia, dzięki temu praktycznie każdy ma możliwość pozyskiwania prądu ze słońca."
         },
         {
-          icon: "ion-social-googleplus-outline",
-          title: "Google Fonts",
-          description: "You can change the fonts of the website."
+          icon: "ion-wrench",
+          title: "Nowoczesne technologie",
+          description:
+            "Wysoka odporność na różne anomalie pogodowe – wiatr, grad czy zalegający śnieg",
+          description2: "Technologia ciągle się rozwija.",
+          description3:
+            "Estetyka wykonania – pasują na każdy rodzaj i kolor dachu.",
+          description4:
+            "Moduły fotowoltaiczne nie wymagają konserwacji i są praktycznie bezawaryjne – nie posiadają ruchomych części, które są szczególnie narażone na uszkodzenia.",
+          description5:
+            "Możliwy montaż na gruncie – jeśli na dachu nie ma wystarczająco dużo miejsca możliwe jest zainstalowanie paneli fotowoltaicznych np. w ogrodzie.",
+          description6:
+            "Szybki montaż, nie wymagane jest pozwolenie na budowę mikroinstalacji."
         },
         {
-          icon: "ion-ios-heart-outline",
-          title: "Clean Codes",
-          description: "Clean code which can be understood."
-        },
-        {
-          icon: "ion-ios-color-wand-outline",
-          title: "Responsive Design",
-          description: "Fully responsive and retina ready."
-        },
-        {
-          icon: "ion-ios-checkmark-outline",
-          title: "Easy to Use",
-          description: "The template can be fully customizable with ease."
-        },
-        {
-          icon: "ion-ios-photos-outline",
-          title: "Perfect Showcase",
-          description: "Template makes your website look beautiful."
-        },
-        {
-          icon: "ion-ios-videocam-outline",
-          title: "Video Animation",
-          description: "You can also add videos to the website as you need."
+          icon: "ion-arrow-graph-down-right",
+          title: "Niskie rachunki za prąd",
+          description:
+            "Niezużyta energia może zostać zmagazynowana i odebrana z sieci w ciągu dwóch lat (na mocy nowelizacji ustawy)",
+          description2:
+            "W Polsce roczna suma energii promieniowania słonecznego padającego na 1 m2 powierzchni wynosi ok. 1000 kWh. To naprawdę dużo, bo żeby uzyskać taką ilość ciepła musimy spalić np. 100 m3 gazu ziemnego.",
+          description3:
+            "Roczne zapotrzebowanie nowego domu o powierzchni 150 m2 to 10 000-20 000 kWh."
         }
       ]
     };
+  },
+  methods: {
+    openInfo(blog) {
+      {
+        const h = this.$createElement;
+        // Using HTML string
+        // More complex structure
+        const messageVNode = h("div", { class: ["center"] }, [
+          h("h1", { class: ["text-center", blog.icon] }),
+          h("h4", { class: ["title iq-tw-5"] }, [h("strong", {}, blog.title)]),
+          h("br", { class: ["text-left"] }),
+          h("p", { class: ["text-left"] }, [h("p", {}, blog.description)]),
+          h(
+            "p",
+            { class: ["text-left"] },
+
+            [h("strong", {}, blog.description2)]
+          ),
+          h(
+            "p",
+            { class: ["text-left"] },
+
+            [h("p", {}, blog.description3)]
+          ),
+          h(
+            "p",
+            { class: ["text-left"] },
+
+            [h("strong", {}, blog.description4)]
+          ),
+          h(
+            "p",
+            { class: ["text-left"] },
+
+            [h("p", {}, blog.description5)]
+          ),
+          h(
+            "p",
+            { class: ["text-left"] },
+
+            [h("strong", {}, blog.description6)]
+          )
+        ]);
+        // We must pass the generated VNodes as arrays
+        this.$bvModal.msgBoxOk([messageVNode], {
+          centered: true,
+          size: "md",
+          hideFooter: false
+        });
+      }
+    }
   }
 };
 </script>

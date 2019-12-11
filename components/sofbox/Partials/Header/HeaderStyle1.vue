@@ -1,7 +1,9 @@
+  
 <template>
   <!-- Header -->
   <header id="main-header" :class="className">
     <slot name="topBar" />
+
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-12">
@@ -9,6 +11,7 @@
             <a class="navbar-brand" href="#">
               <img :id="styledLogo ? 'logo_img' : ''" class="img-fluid" :src="logoImg" alt="#" />
             </a>
+
             <button
               class="navbar-toggler"
               type="button"
@@ -20,6 +23,7 @@
             >
               <span class="ion-navicon" />
             </button>
+            <!-- <div class="text">Zadzwoń teraz! 500 414 456</div> -->
             <div id="navbarSupportedContent" class="collapse navbar-collapse">
               <ul class="navbar-nav mr-auto w-100 justify-content-end menu">
                 <li v-for="(option,index) in navItemList" :key="index" class="nav-item menu-item">
