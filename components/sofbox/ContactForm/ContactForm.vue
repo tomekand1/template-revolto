@@ -86,7 +86,15 @@ export default {
           });
           this.clearData();
         })
-        .catch(console.error());
+        .catch(err => {
+          swal({
+            title: "Wystąpił bład.",
+            text: err.message,
+            icon: "error",
+            button: "ok",
+            dangerMode: true
+          });
+        });
     },
     clearData() {
       this.mailData.name = "";
