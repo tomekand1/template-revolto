@@ -1,3 +1,4 @@
+  
 <template>
   <!-- Header -->
   <header id="main-header" :class="className">
@@ -117,12 +118,3 @@ export default {
   }
 };
 </script>
-<style style="text/css">
-.text {
-  height: 30px;
-  overflow: hidden;
-  position: relative;
-  color: white;
-}
-</style>
-

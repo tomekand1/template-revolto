@@ -5,7 +5,7 @@
       <HomeDescription />
       <Offer />
       <Finance />
-      <Pricing />
+
       <CompareService />
       <Faq />
       <Blog />
@@ -44,7 +44,6 @@
             <br />
           </p>
           <ul slot="links">
-            <p>Znajdz nas na:</p>
             <li v-if="this.$store.state.dataToPull.kontakt.twitter">
               <a :href="this.$store.state.dataToPull.kontakt.twitter">
                 <i class="fab fa-twitter" />

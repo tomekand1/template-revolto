@@ -7,7 +7,7 @@
           v-model="mailData.name"
           class="require"
           type="text"
-          placeholder="Name*"
+          placeholder="Imie*"
           name="name"
           required
         />
@@ -29,7 +29,7 @@
           v-model="mailData.phone"
           class="require"
           type="text"
-          placeholder="Phone*"
+          placeholder="Telefon*"
           name="phone"
           required
         />
@@ -40,22 +40,13 @@
           id="contact_message"
           v-model="mailData.message"
           class="input-message require"
-          placeholder="Comment*"
+          placeholder="Wiadomośc*"
           rows="5"
           name="message"
           required
         ></textarea>
       </div>
-      <div class="section-field iq-mt-20">
-        <!-- <div class="g-recaptcha" data-sitekey="6LdA3mYUAAAAANpUuZTLbKM_s23tTHlcdJ7dYfgI"></div>-->
-
-        <!-- <re-captcha
-          (resolved)="resolved($event)"
-          class="google-recaptcha"
-          size="invisible"
-          siteKey="6LdoGLQUAAAAAHXWWr3HKFpCmEm768SZ8acyeRKq"
-        ></re-captcha>-->
-      </div>
+      <div class="section-field iq-mt-20"></div>
       <button id="submit" name="submit" type="submit" value="Send" @click="onSubmit()">Send Message</button>
       <div id="success" class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>Thank You, Your message has been received.</strong>.

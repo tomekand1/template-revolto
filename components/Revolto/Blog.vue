@@ -15,32 +15,31 @@
             <div
               class="owl-carousel"
               data-autoplay="true"
-              data-loop="true"
-              data-nav="false"
-              data-dots="true"
-              data-items="3"
+              data-items="4"
               data-items-laptop="3"
               data-items-tab="2"
               data-items-mobile="2"
               data-items-mobile-sm="1"
               data-margin="30"
             >
-              <div class="item" v-for="blog in blogData">
+              <div
+                class="item"
+                @click="openBmodal(blog)"
+                v-for="(blog,index) in blogData"
+                :key="index"
+              >
                 <CardStyle1>
                   <div slot="cardMedia">
-                    <div class="img-25" @click="openBmodal(blog)">
-                      <img :src="blog.link_to_picture" height="75%" width="75%" alt="#" />
+                    <div class="img-25">
+                      <img :src="blog.link_to_picture" alt="#" />
                     </div>
                   </div>
                   <div slot="cardTitle">
-                    <a>
-                      <h5 class="iq-tw-7 iq-mb-10">{{blog.title}}</h5>
-                    </a>
+                    <h5 class="iq-tw-7 iq-mb-10">{{blog.title}}</h5>
                   </div>
                   <div slot="cardBody">
                     <p>{{blog.description.slice(0,100)+"..."}}</p>
                   </div>
-                  <div slot="cardFooter"></div>
                 </CardStyle1>
               </div>
             </div>
@@ -57,26 +56,56 @@ export default {
     return {
       blogData: [
         {
+          image_id: 1,
           title: "API Reference",
           description:
             "If you are looking for information on a specific function, class, or method, this part of the documentation is for you.",
-          link_to_picture: `https://picsum.photos/1920/1080`
+          link_to_picture: `https://picsum.photos/800/600`
         },
         {
+          image_id: 2,
           title: "Miscellaneous Pages",
           description: "descrip",
-          link_to_picture: `https://picsum.photos/1920/1082`
+          link_to_picture: `https://picsum.photos/800/601`
         },
         {
+          image_id: 3,
           title: "Miscellaneous",
           description: "descr",
-          link_to_picture: `https://picsum.photos/1920/1083`
+          link_to_picture: `https://picsum.photos/800/602`
         },
         {
+          image_id: 4,
           title: "Pages",
           description:
             " It’s highly configurable but comes with sensible defaults out of the box.",
-          link_to_picture: `https://picsum.photos/1920/1084`
+          link_to_picture: `https://picsum.photos/800/604`
+        },
+        {
+          image_id: 1,
+          title: "API Reference",
+          description:
+            "If you are looking for information on a specific function, class, or method, this part of the documentation is for you.",
+          link_to_picture: `https://picsum.photos/800/600`
+        },
+        {
+          image_id: 2,
+          title: "Miscellaneous Pages",
+          description: "descrip",
+          link_to_picture: `https://picsum.photos/800/601`
+        },
+        {
+          image_id: 3,
+          title: "Miscellaneous",
+          description: "descr",
+          link_to_picture: `https://picsum.photos/800/602`
+        },
+        {
+          image_id: 4,
+          title: "Pages",
+          description:
+            " It’s highly configurable but comes with sensible defaults out of the box.",
+          link_to_picture: `https://picsum.photos/800/604`
         }
       ]
     };
@@ -95,16 +124,17 @@ export default {
               fluid: true
             }
           }),
-          h("p", { class: ["text-center"] }, [h("strong", {}, blog.title)]),
-          h("p", { class: ["text-center"] }, [
-            h("strong", {}, blog.description)
-          ])
+          h("p", { class: ["text-center"] }),
+          h("h4", { class: ["text-center"] }, [h("strong", {}, blog.title)]),
+          h("p", { class: ["text-center"] }),
+          h("p", { class: ["text-center"] }, [h("p", {}, blog.description)])
         ]);
         // We must pass the generated VNodes as arrays
         this.$bvModal.msgBoxOk([messageVNode], {
           centered: true,
           size: "lg",
-          hideFooter: false
+          buttonSize: "sm",
+          footerClass: "p-2 border-top-0"
         });
       }
     }
