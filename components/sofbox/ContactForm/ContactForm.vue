@@ -66,7 +66,9 @@
     </div>
   </form>
 </template>
+
 <script>
+import axios from "axios";
 export default {
   name: "ContactForm",
   data() {
@@ -82,7 +84,15 @@ export default {
   },
   methods: {
     onSubmit($event) {
-      console.log(this.mailData.name);
+      axios.post(`${VUE_APP_API_PATH}/api/user/`, this.mailData).then(res => {
+        console.log(res);
+      });
+    },
+    clearData() {
+      this.name = "";
+      this.email = "";
+      this.phone = "";
+      this.message = "";
     }
   }
 };

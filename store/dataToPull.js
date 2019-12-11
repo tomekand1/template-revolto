@@ -44,7 +44,7 @@ export const state = () => ({
         facebook: "https://facebook.com",
         instagram: "instagram"
     },
-    color: ""
+    color: { color: "red" }
 })
 
 export const mutations = {
