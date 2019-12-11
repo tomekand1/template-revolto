@@ -33,7 +33,7 @@ export const state = () => ({
         title: "Instalacje prad",
         description1: "Nasza oferta obejmuje również instalacje fotowoltaiczne wykorzystujące optymalizatory pracy i inwertery SolarEdge. Rozwiązanie to pozwala na umieszczenie paneli nawet na dachach częściowo zacienianych, np. przez drzewa, kominy i wykusze, zachowując przy tym jednocześnie wysoką produkcję energii. Dzięki optymalizatorom każdy panel działa niezależnie, co poprawia wydajność całej instalacji w warunkach częściowego zacienienia nawet o kilkadziesiąt procent!",
         description2: "Przy szacowaniu okresu zwrotu instalacji należy brać pod uwagę nie tylko dzisiejszą cenę prądu, ale też jego cenę w przyszłości. Dzięki produkcji prądu na własnym dachu uniezależnisz się od podwyżek cen przez Energetykę.",
-        description2: "Darmowa konsultacja, Zadzwoń i umów się na darmową konsultację.Bez kosztów i bez zobowiązań.Dowiesz się jakich oszczędności możesz się spodziewać po zamontowaniu fotowoltaiki na swoim dachu. Po dobraniu odpowiednich komponentów, przygotujemy dla Ciebie projekt instalacji."
+        description3: "Darmowa konsultacja, Zadzwoń i umów się na darmową konsultację.Bez kosztów i bez zobowiązań.Dowiesz się jakich oszczędności możesz się spodziewać po zamontowaniu fotowoltaiki na swoim dachu. Po dobraniu odpowiednich komponentów, przygotujemy dla Ciebie projekt instalacji."
     },
     kontakt: {
         address: "adress do firmy",
@@ -44,7 +44,10 @@ export const state = () => ({
         facebook: "https://facebook.com",
         instagram: "instagram"
     },
-    color: ""
+    color: {
+        code: "#DD8200",
+        rgb: "36, 50, 71"
+    }
 })
 
 export const mutations = {

@@ -29,44 +29,28 @@ export default {
     return {
       list: [
         {
-          icon: "ion-android-add-circle",
-          title: "High Resolution",
-          description: "Provided with high resolution images."
+          icon: "ion-android-cart",
+          title: "Finansowe",
+          description:
+            "Fotowoltaika w domu oznacza, że możesz zyskać niezależność od podwyżek cen prądu przez co najmniej 25 lat,"
         },
         {
-          icon: "ion-ios-settings",
-          title: "Color Schemes",
-          description: "You can use color schemes as you need."
+          icon: "ion-earth",
+          title: "Ekologiczne",
+          description:
+            "Czyste źródło energii – moduły fotwoltaiczne nie emitują zanieczyszczeń, można je także poddać recyklingowi"
         },
         {
-          icon: "ion-social-googleplus-outline",
-          title: "Google Fonts",
-          description: "You can change the fonts of the website."
+          icon: "ion-wrench",
+          title: "Nowoczesne technologie",
+          description:
+            "Wysoka odporność na różne anomalie pogodowe – wiatr, grad czy zalegający śnieg"
         },
         {
-          icon: "ion-ios-heart-outline",
-          title: "Clean Codes",
-          description: "Clean code which can be understood."
-        },
-        {
-          icon: "ion-ios-color-wand-outline",
-          title: "Responsive Design",
-          description: "Fully responsive and retina ready."
-        },
-        {
-          icon: "ion-ios-checkmark-outline",
-          title: "Easy to Use",
-          description: "The template can be fully customizable with ease."
-        },
-        {
-          icon: "ion-ios-photos-outline",
-          title: "Perfect Showcase",
-          description: "Template makes your website look beautiful."
-        },
-        {
-          icon: "ion-ios-videocam-outline",
-          title: "Video Animation",
-          description: "You can also add videos to the website as you need."
+          icon: "ion-arrow-graph-down-right",
+          title: "Niskie rachunki za prąd",
+          description:
+            "Niezużyta energia może zostać zmagazynowana i odebrana z sieci w ciągu dwóch lat (na mocy nowelizacji ustawy) lub sprzedana (fotowoltaika dla firm),"
         }
       ]
     };
