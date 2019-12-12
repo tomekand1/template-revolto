@@ -89,7 +89,6 @@ export default {
   created() {
     this.$root.$on("bv::scrollspy::activate", this.onActivate);
     if (window.innerWidth <= 989) {
-      console.log("hi");
       this.dataSend = "collapse";
       this.dataSend2 = "#navbarSupportedContent";
     } else {

@@ -140,6 +140,7 @@ export default {
           centered: true,
           size: "lg",
           buttonSize: "sm",
+          okVariant: "secondary",
           footerClass: "p-2 border-top-0"
         });
       }
@@ -153,7 +154,7 @@ export default {
   margin-top: 2em;
 }
 .pos {
-  margin-left: 40%;
+  margin-left: 45%;
   margin-right: auto;
 }
 @media only screen and (max-width: 600px) {

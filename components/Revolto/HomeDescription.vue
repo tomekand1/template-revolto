@@ -95,33 +95,33 @@ export default {
           h("h1", { class: ["text-center", blog.icon] }),
           h("h4", { class: ["title iq-tw-5"] }, [h("strong", {}, blog.title)]),
           h("br", { class: ["text-left"] }),
-          h("li", { class: ["textModal"] }, [h("li", {}, blog.description)]),
+          h("p", { class: ["textModal"] }, [h("li", {}, blog.description)]),
           h(
-            "li",
+            "p",
             { class: ["textModal"] },
 
             [h("strong", {}, blog.description2)]
           ),
           h(
-            "li",
+            "p",
             { class: ["textModal"] },
 
             [h("li", {}, blog.description3)]
           ),
           h(
-            "li",
+            "p",
             { class: ["textModal"] },
 
             [h("strong", {}, blog.description4)]
           ),
           h(
-            "li",
+            "p",
             { class: ["textModal"] },
 
             [h("li", {}, blog.description5)]
           ),
           h(
-            "li",
+            "p",
             { class: ["textModal"] },
 
             [h("strong", {}, blog.description6)]
@@ -129,9 +129,12 @@ export default {
         ]);
         // We must pass the generated VNodes as arrays
         this.$bvModal.msgBoxOk([messageVNode], {
-          centered: true,
-          size: "md",
-          hideFooter: false
+          centered: false,
+          okVariant: "secondary",
+          size: "lg",
+          scrollable: true,
+          buttonSize: "sm",
+          footerClass: "p-2 border-top-0"
         });
       }
     }
@@ -143,5 +146,7 @@ export default {
 .textModal {
   list-style-position: outside;
   list-style-image: none;
+  font-style: oblique;
+  color: rgb(16, 34, 4);
 }
 </style>

@@ -22,17 +22,17 @@
             <h5
               class="iq-tw-6 iq-pb-10 iq-font-white"
             >ZAMÓW BEZPŁATNY AUDYT i dowiedz się jak obniżyć rachunki za prąd lub nie płacić ich wcale instalując panele fotowoltaiczne.</h5>
-            <p>
+            <p style="font-style: italic">
               Fotowoltaika to proces przetwarzania energii słonecznej na energię elektryczną. Dzięki systemowi fotowoltaicznemu możesz znacznie obniżyć wysokość rachunków za prąd (np. zapłacisz za prąd tylko ok. 100zł za rok).
               Dobrze dobrana i zamontowana instalacja będzie działała ponad 25 lat! Pracujemy tylko na najlepszych komponentach, współpracujemy z największymi z branży, gwarancje sięgają nawet 25 lat. To gwarancja bezpieczeństwa i tego, że inwestycja się zwróci.
             </p>
           </div>
           <div class="iq-progress-bar">
-            <p class="iq-progress-bar-text">
+            <!-- <p class="iq-progress-bar-text">
               <span>100%</span>
-            </p>
+            </p>-->
             <div class="iq-progress-bar">
-              <span data-percent="99" />
+              <span data-percent="100" />
             </div>
           </div>
         </div>
