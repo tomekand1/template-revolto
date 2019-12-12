@@ -11,7 +11,7 @@
           </div>
         </div>
 
-        <vue-glide type="slide" :autoplay="autoplay" :breakpoints="size" class="glide__arrow">
+        <vue-glide type="slide" :breakpoints="size" class="glide__arrow">
           >
           <vue-glide-slide v-for="(blog,index) in blogData" :key="index">
             <CardStyle1>
@@ -158,7 +158,7 @@ export default {
 }
 @media only screen and (max-width: 600px) {
   .pos {
-    margin-left: 27%;
+    margin-left: 25%;
     margin-right: auto;
   }
 }

@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="heading-title">
-            <h3 class="title iq-tw-7">Loved By Our Customers</h3>
-            <p>Here are the sayings of our customers</p>
+            <h3 class="title iq-tw-7">Opinie</h3>
+            <p>Opinie naszych klientów</p>
           </div>
         </div>
       </div>
@@ -28,10 +28,10 @@
               <CardStyle7>
                 <div slot="cardMedia"></div>
                 <div slot="cardHeader">
-                  <h5 class="iq-tw-6">Jason Adams</h5>
+                  <h5 class="iq-tw-6">Natalia Z.</h5>
                 </div>
                 <div slot="cardBody">
-                  <p>Excellent customer service and best savings on our energy bills</p>
+                  <p>Wielki pozytyw. Pełen profesjonalizm i zaangażowanie w sprawie. Szybko i sprawnie zajęto się moja sprawą, materiały dowodowe sprawiły że uzyskałam jasna odpowiedź na zlecaną sprawę. Tomasz w trudnych dla mnie chwilach wykazał się duża cierpliwością i empatią oraz wsparciem.</p>
                 </div>
               </CardStyle7>
             </div>
