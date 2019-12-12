@@ -25,7 +25,7 @@
                 <p @click="openBmodal(blog)">{{blog.description.slice(0,25)+"..."}}</p>
               </div>
               <div slot="cardFooter">
-                <ul class="list-inline">
+                <ul @click="openBmodal(blog)" class="list-inline">
                   <li class="list-inline-item">
                     <i class="fa fa-calendar" aria-hidden="true" />
                     12 Aug 2019
