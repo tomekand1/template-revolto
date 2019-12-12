@@ -34,12 +34,10 @@
               </div>
             </CardStyle1>
           </vue-glide-slide>
-          <div class="pos">
-            <template slot="control">
-              <button data-glide-dir="<" class="button btn ion-arrow-left-a"></button>
-              <button data-glide-dir=">" class="button btn ion-arrow-right-a"></button>
-            </template>
-          </div>
+          <template slot="control">
+            <button data-glide-dir="<" class="pos marg button btn ion-chevron-left"></button>
+            <button data-glide-dir=">" class="button marg btn ion-chevron-right"></button>
+          </template>
         </vue-glide>
       </div>
     </section>
@@ -151,6 +149,17 @@ export default {
 </script>
 
 <style>
+.marg {
+  margin-top: 2em;
+}
 .pos {
+  margin-left: 40%;
+  margin-right: auto;
+}
+@media only screen and (max-width: 600px) {
+  .pos {
+    margin-left: 27%;
+    margin-right: auto;
+  }
 }
 </style>
