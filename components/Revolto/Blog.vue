@@ -10,60 +10,58 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <div
-              class="owl-carousel"
-              data-nav="true"
-              data-dots="false"
-              data-items="3"
-              data-items-laptop="3"
-              data-items-tab="2"
-              data-items-mobile="2"
-              data-items-mobile-sm="1"
-              data-margin="30"
-            >
-              <div
-                class="item"
-                @click="openBmodal(blog)"
-                v-for="(blog,index) in blogData"
-                :key="index"
-              >
-                <CardStyle1>
-                  <div slot="cardMedia">
-                    <div class="img-25">
-                      <img :src="blog.link_to_picture" alt="#" />
-                    </div>
-                  </div>
-                  <div slot="cardTitle">
-                    <h5 class="iq-tw-7 iq-mb-10">{{blog.title}}</h5>
-                  </div>
-                  <div slot="cardBody">
-                    <p>{{blog.description.slice(0,25)+"..."}}</p>
-                  </div>
-                  <div slot="cardFooter">
-                    <ul class="list-inline">
-                      <li class="list-inline-item">
-                        <a href="javascript:void(0)">
-                          <i class="fa fa-calendar" aria-hidden="true" /> 12 Aug 2019
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </CardStyle1>
+
+        <vue-glide type="slide" :autoplay="autoplay" :breakpoints="size" class="glide__arrow">
+          >
+          <vue-glide-slide v-for="(blog,index) in blogData" :key="index">
+            <CardStyle1>
+              <div slot="cardMedia">
+                <img @click="openBmodal(blog)" :src="blog.link_to_picture" alt="#" />
               </div>
-            </div>
+              <div slot="cardTitle">
+                <h5 @click="openBmodal(blog)" class="iq-tw-7 iq-mb-10">{{blog.title}}</h5>
+              </div>
+              <div slot="cardBody">
+                <p @click="openBmodal(blog)">{{blog.description.slice(0,25)+"..."}}</p>
+              </div>
+              <div slot="cardFooter">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <i class="fa fa-calendar" aria-hidden="true" />
+                    12 Aug 2019
+                  </li>
+                </ul>
+              </div>
+            </CardStyle1>
+          </vue-glide-slide>
+          <div class="pos">
+            <template slot="control">
+              <button data-glide-dir="<" class="button btn ion-arrow-left-a"></button>
+              <button data-glide-dir=">" class="button btn ion-arrow-right-a"></button>
+            </template>
           </div>
-        </div>
+        </vue-glide>
       </div>
     </section>
   </div>
 </template>
 <script>
+import { Glide, GlideSlide } from "vue-glide-js";
+import "vue-glide-js/dist/vue-glide.css";
 export default {
   name: "Blog",
+  components: {
+    [Glide.name]: Glide,
+    [GlideSlide.name]: GlideSlide
+  },
   data() {
     return {
+      autoplay: 3000,
+      size: {
+        800: {
+          perView: 1
+        }
+      },
       blogData: [
         {
           image_id: 1,
@@ -153,20 +151,6 @@ export default {
 </script>
 
 <style>
-[class^="img"] {
-  display: inline-block;
-  /*
-        Uncomment to see div dimensions
-    
-        border: 1px dotted red;
-    */
-}
-
-[class^="img"] img {
-  display: block;
-}
-
-.img-25 img {
-  max-width: 100%;
+.pos {
 }
 </style>

@@ -17,16 +17,16 @@ void (function updateModules () {
   // Enforce store modules
   store.modules = store.modules || {}
 
-  resolveStoreModules(require('../store/dataToPull.js'), 'dataToPull.js')
-  resolveStoreModules(require('../store/questionsData.js'), 'questionsData.js')
+  resolveStoreModules(require('..\\store\\dataToPull.js'), 'dataToPull.js')
+  resolveStoreModules(require('..\\store\\questionsData.js'), 'questionsData.js')
 
   // If the environment supports hot reloading...
 
   if (process.client && module.hot) {
     // Whenever any Vuex module is updated...
     module.hot.accept([
-      '../store/dataToPull.js',
-      '../store/questionsData.js',
+      '..\\store\\dataToPull.js',
+      '..\\store\\questionsData.js',
     ], () => {
       // Update `root.modules` with the latest definitions.
       updateModules()
