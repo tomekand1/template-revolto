@@ -46,6 +46,7 @@
 <script>
 import { Glide, GlideSlide } from "vue-glide-js";
 import "vue-glide-js/dist/vue-glide.css";
+import axios from "axios";
 export default {
   name: "Blog",
   components: {
@@ -60,60 +61,7 @@ export default {
           perView: 1
         }
       },
-      blogData: [
-        {
-          image_id: 1,
-          title: "API Reference",
-          description:
-            "If you are looking for information on a specific function, class, or method, this part of the documentation is for you.",
-          link_to_picture: `https://picsum.photos/800/600`
-        },
-        {
-          image_id: 2,
-          title: "Miscellaneous Pages",
-          description: "descrip",
-          link_to_picture: `https://picsum.photos/800/601`
-        },
-        {
-          image_id: 3,
-          title: "Miscellaneous",
-          description: "descr",
-          link_to_picture: `https://picsum.photos/800/602`
-        },
-        {
-          image_id: 4,
-          title: "Pages",
-          description:
-            " It’s highly configurable but comes with sensible defaults out of the box.",
-          link_to_picture: `https://picsum.photos/800/604`
-        },
-        {
-          image_id: 1,
-          title: "API Reference",
-          description:
-            "If you are looking for information on a specific function, class, or method, this part of the documentation is for you.",
-          link_to_picture: `https://picsum.photos/800/600`
-        },
-        {
-          image_id: 2,
-          title: "Miscellaneous Pages",
-          description: "descrip",
-          link_to_picture: `https://picsum.photos/800/601`
-        },
-        {
-          image_id: 3,
-          title: "Miscellaneous",
-          description: "descr",
-          link_to_picture: `https://picsum.photos/800/602`
-        },
-        {
-          image_id: 4,
-          title: "Pages",
-          description:
-            " It’s highly configurable but comes with sensible defaults out of the box.",
-          link_to_picture: `https://picsum.photos/800/604`
-        }
-      ]
+      blogData: []
     };
   },
   methods: {
@@ -144,7 +92,15 @@ export default {
           footerClass: "p-2 border-top-0"
         });
       }
+    },
+    getImages() {
+      axios.get(`${process.env.baseUrl}/api/images`).then(({ data }) => {
+        this.blogData = data;
+      });
     }
+  },
+  mounted() {
+    this.getImages();
   }
 };
 </script>

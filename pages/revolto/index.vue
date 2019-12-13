@@ -32,31 +32,31 @@
         </ParallaxStyle1>
         <Contact />
         <FooterStyle3>
-          <p slot="address">{{this.$store.state.dataToPull.kontakt.address}}</p>
+          <p slot="address">{{this.$store.state.dataToPull.settings.kontakt.address}}</p>
           <p slot="phone">
-            {{this.$store.state.dataToPull.kontakt.phone}}
+            {{this.$store.state.dataToPull.settings.kontakt.phone}}
             <br />
-            {{this.$store.state.dataToPull.kontakt.godzinyOtwarcia}}
+            {{this.$store.state.dataToPull.settings.kontakt.godzinyOtwarcia}}
             <br />
           </p>
           <p slot="mail">
-            {{this.$store.state.dataToPull.kontakt.mail}}
+            {{this.$store.state.dataToPull.settings.kontakt.mail}}
             <br />
           </p>
           <ul slot="links">
-            <li v-if="this.$store.state.dataToPull.kontakt.twitter">
-              <a :href="this.$store.state.dataToPull.kontakt.twitter">
+            <li v-if="this.$store.state.dataToPull.settings.kontakt.twitter">
+              <a :href="this.$store.state.dataToPull.settings.kontakt.twitter">
                 <i class="fab fa-twitter" />
               </a>
             </li>
-            <li v-if="this.$store.state.dataToPull.kontakt.facebook">
-              <a :href="this.$store.state.dataToPull.kontakt.facebook">
+            <li v-if="this.$store.state.dataToPull.settings.kontakt.facebook">
+              <a :href="this.$store.state.dataToPull.settings.kontakt.facebook">
                 <i class="fab fa-facebook" />
               </a>
             </li>
 
-            <li v-if="this.$store.state.dataToPull.kontakt.instagram">
-              <a :href="this.$store.state.dataToPull.kontakt.instagram">
+            <li v-if="this.$store.state.dataToPull.settings.kontakt.instagram">
+              <a :href="this.$store.state.dataToPull.settings.kontakt.instagram">
                 <i class="fab fa-instagram" />
               </a>
             </li>

@@ -24,14 +24,14 @@
             data-items-mobile-sm="1"
             data-margin="30"
           >
-            <div class="item">
+            <div class="item" v-for="(opinion,index) in opinions" :key="index">
               <CardStyle7>
                 <div slot="cardMedia"></div>
                 <div slot="cardHeader">
-                  <h5 class="iq-tw-6">Natalia Z.</h5>
+                  <h5 class="iq-tw-6">{{opinion.opinion_title}}</h5>
                 </div>
                 <div slot="cardBody">
-                  <p>Wielki pozytyw. Pełen profesjonalizm i zaangażowanie w sprawie. Szybko i sprawnie zajęto się moja sprawą, materiały dowodowe sprawiły że uzyskałam jasna odpowiedź na zlecaną sprawę. Tomasz w trudnych dla mnie chwilach wykazał się duża cierpliwością i empatią oraz wsparciem.</p>
+                  <p>{{opinion.opinion_body}}</p>
                 </div>
               </CardStyle7>
             </div>
@@ -42,7 +42,27 @@
   </section>
 </template>
 <script>
+import axios from "axios";
 export default {
-  name: "Testimonial"
+  name: "Testimonial",
+  data() {
+    return {
+      opinions: []
+    };
+  },
+  methods: {
+    getOpinions() {
+      axios
+        .get(`${process.env.baseUrl}/api/opinions/`, {
+          auth: JSON.parse(sessionStorage.getItem("auth"))
+        })
+        .then(({ data }) => {
+          this.opinions = data;
+        });
+    }
+  },
+  mounted() {
+    this.getOpinions();
+  }
 };
 </script>
