@@ -8,25 +8,28 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="heading-title white">
-            <h3 class="title iq-tw-7">Compare Services</h3>
+            <h3 class="title iq-tw-7">O nas</h3>
           </div>
         </div>
       </div>
-
-      <div class="col-sm-5">
-        <div class="iq-services-box text-left iq-font-white">
-          <div class="iq-icon">
-            <i aria-hidden="true" class="ion-ios-color-wand-outline" />
-          </div>
-          <div class="services-content">
-            <h5 class="iq-tw-6 iq-pb-10 iq-font-white">Unique Design</h5>
-            <p>Sofbox’s harmonious design and super clean looks will make your website look beautiful and elegant. It makes your creation look good.</p>
-            <div class="iq-progress-bar">
-              <p class="iq-progress-bar-text">
-                <span>40</span>
-              </p>
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="iq-services-box text-left iq-font-white">
+            <div class="iq-icon">
+              <i aria-hidden="true" class="ion-ios-color-wand-outline" />
+            </div>
+            <div class="services-content">
+              <h5
+                class="iq-tw-6 iq-pb-10 iq-font-white"
+              >Umów się na bezpłatny audyt w dogodnym dla Ciebie terminie!</h5>
+              <p>Dobrze dobrana i zamontowana instalacja będzie działała ponad 25 lat! Pracujemy tylko na najlepszych komponentach, współpracujemy z największymi z branży, gwarancje sięgają nawet 25 lat. To gwarancja bezpieczeństwa i tego, że inwestycja się zwróci.</p>
               <div class="iq-progress-bar">
-                <span data-percent="40" />
+                <p class="iq-progress-bar-text">
+                  <span>25</span>
+                </p>
+                <div class="iq-progress-bar">
+                  <span data-percent="98" />
+                </div>
               </div>
             </div>
           </div>
