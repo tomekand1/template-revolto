@@ -26,7 +26,7 @@ export default {
     }
   },
   mounted() {
-    this.styleChange(this.$store.state.dataToPull.color);
+    this.styleChange(this.$store.state.dataToPull.settings.color);
   }
 };
 </script>

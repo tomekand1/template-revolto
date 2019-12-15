@@ -9,11 +9,11 @@
         <div class="row">
           <div class="col-lg-6">
             <h1 class="text-uppercase iq-font-white iq-tw-3">
-              {{ this.$store.state.dataToPull.home.title
+              {{ this.$store.state.dataToPull.settings.home.title
               }}
             </h1>
             <p class="iq-font-white iq-pt-15 iq-mb-40">
-              {{ this.$store.state.dataToPull.home.description
+              {{ this.$store.state.dataToPull.settings.home.description
               }}
             </p>
           </div>
@@ -41,12 +41,28 @@
   </ParallaxStyle1>
 </template>
 <script>
+import axios from "axios";
+import { mapActions } from "vuex";
 export default {
   name: "Home",
   data() {
     return {
       bgImage: require("../../assets/images/bg/01.jpg")
     };
+  },
+  methods: {
+    // getData() {
+    //   axios.get(`${process.env.baseUrl}/api/settings/1`).then(({ data }) => {
+    //     this.settings = data.settings;
+    //   });
+    // }
+    ...mapActions({
+      getData: "dataToPull/getData"
+    })
+  },
+  mounted() {
+    this.getData();
   }
 };
 </script>
+

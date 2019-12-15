@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="heading-title">
-            <h3 class="title iq-tw-7">Loved By Our Customers</h3>
-            <p>Here are the sayings of our customers</p>
+            <h3 class="title iq-tw-7">Opinie</h3>
+            <p>Opinie naszych klientów</p>
           </div>
         </div>
       </div>
@@ -24,14 +24,14 @@
             data-items-mobile-sm="1"
             data-margin="30"
           >
-            <div class="item">
+            <div class="item" v-for="(opinion,index) in opinions" :key="index">
               <CardStyle7>
                 <div slot="cardMedia"></div>
                 <div slot="cardHeader">
-                  <h5 class="iq-tw-6">Jason Adams</h5>
+                  <h5 class="iq-tw-6">{{opinion.opinion_title}}</h5>
                 </div>
                 <div slot="cardBody">
-                  <p>Excellent customer service and best savings on our energy bills</p>
+                  <p>{{opinion.opinion_body}}</p>
                 </div>
               </CardStyle7>
             </div>
@@ -42,7 +42,27 @@
   </section>
 </template>
 <script>
+import axios from "axios";
 export default {
-  name: "Testimonial"
+  name: "Testimonial",
+  data() {
+    return {
+      opinions: []
+    };
+  },
+  methods: {
+    getOpinions() {
+      axios
+        .get(`${process.env.baseUrl}/api/opinions/`, {
+          auth: JSON.parse(sessionStorage.getItem("auth"))
+        })
+        .then(({ data }) => {
+          this.opinions = data;
+        });
+    }
+  },
+  mounted() {
+    this.getOpinions();
+  }
 };
 </script>

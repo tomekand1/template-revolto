@@ -38,7 +38,7 @@
               <a
                 href="javascript:void(0)"
                 class="accordion-title iq-tw-7 iq-font-grey"
-              >{{question.title}}</a>
+              >{{question.question_title}}</a>
               <div class="accordion-details">{{question.answer}}</div>
             </div>
           </div>
@@ -63,12 +63,27 @@
   </section>
 </template>
 <script>
+import axios from "axios";
 export default {
   name: "Faq",
   data() {
     return {
-      questions: this.$store.state.questionsData.questions
+      questions: []
     };
+  },
+  methods: {
+    getQuestions() {
+      axios
+        .get(`${process.env.baseUrl}/api/questions/`, {
+          auth: JSON.parse(sessionStorage.getItem("auth"))
+        })
+        .then(({ data }) => {
+          this.questions = data;
+        });
+    }
+  },
+  mounted() {
+    this.getQuestions();
   }
 };
 </script>

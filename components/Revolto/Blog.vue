@@ -10,114 +10,58 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <div
-              class="owl-carousel"
-              data-nav="true"
-              data-dots="false"
-              data-items="3"
-              data-items-laptop="3"
-              data-items-tab="2"
-              data-items-mobile="2"
-              data-items-mobile-sm="1"
-              data-margin="30"
-            >
-              <div
-                class="item"
-                @click="openBmodal(blog)"
-                v-for="(blog,index) in blogData"
-                :key="index"
-              >
-                <CardStyle1>
-                  <div slot="cardMedia">
-                    <div class="img-25">
-                      <img :src="blog.link_to_picture" alt="#" />
-                    </div>
-                  </div>
-                  <div slot="cardTitle">
-                    <h5 class="iq-tw-7 iq-mb-10">{{blog.title}}</h5>
-                  </div>
-                  <div slot="cardBody">
-                    <p>{{blog.description.slice(0,25)+"..."}}</p>
-                  </div>
-                  <div slot="cardFooter">
-                    <ul class="list-inline">
-                      <li class="list-inline-item">
-                        <a href="javascript:void(0)">
-                          <i class="fa fa-calendar" aria-hidden="true" /> 12 Aug 2019
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </CardStyle1>
+
+        <vue-glide type="slide" :breakpoints="size" class="glide__arrow">
+          >
+          <vue-glide-slide v-for="(blog,index) in blogData" :key="index">
+            <CardStyle1>
+              <div slot="cardMedia">
+                <img @click="openBmodal(blog)" :src="blog.link_to_picture" alt="#" />
               </div>
-            </div>
-          </div>
-        </div>
+              <div slot="cardTitle">
+                <h5 @click="openBmodal(blog)" class="iq-tw-7 iq-mb-10">{{blog.title}}</h5>
+              </div>
+              <div slot="cardBody">
+                <p @click="openBmodal(blog)">{{blog.description.slice(0,25)+"..."}}</p>
+              </div>
+              <div slot="cardFooter">
+                <ul @click="openBmodal(blog)" class="list-inline">
+                  <li class="list-inline-item">
+                    <i class="fa fa-calendar" aria-hidden="true" />
+                    12 Aug 2019
+                  </li>
+                </ul>
+              </div>
+            </CardStyle1>
+          </vue-glide-slide>
+          <template slot="control">
+            <button data-glide-dir="<" class="pos marg button btn ion-chevron-left"></button>
+            <button data-glide-dir=">" class="button marg btn ion-chevron-right"></button>
+          </template>
+        </vue-glide>
       </div>
     </section>
   </div>
 </template>
 <script>
+import { Glide, GlideSlide } from "vue-glide-js";
+import "vue-glide-js/dist/vue-glide.css";
+import axios from "axios";
 export default {
   name: "Blog",
+  components: {
+    [Glide.name]: Glide,
+    [GlideSlide.name]: GlideSlide
+  },
   data() {
     return {
-      blogData: [
-        {
-          image_id: 1,
-          title: "API Reference",
-          description:
-            "If you are looking for information on a specific function, class, or method, this part of the documentation is for you.",
-          link_to_picture: `https://picsum.photos/800/600`
-        },
-        {
-          image_id: 2,
-          title: "Miscellaneous Pages",
-          description: "descrip",
-          link_to_picture: `https://picsum.photos/800/601`
-        },
-        {
-          image_id: 3,
-          title: "Miscellaneous",
-          description: "descr",
-          link_to_picture: `https://picsum.photos/800/602`
-        },
-        {
-          image_id: 4,
-          title: "Pages",
-          description:
-            " It’s highly configurable but comes with sensible defaults out of the box.",
-          link_to_picture: `https://picsum.photos/800/604`
-        },
-        {
-          image_id: 1,
-          title: "API Reference",
-          description:
-            "If you are looking for information on a specific function, class, or method, this part of the documentation is for you.",
-          link_to_picture: `https://picsum.photos/800/600`
-        },
-        {
-          image_id: 2,
-          title: "Miscellaneous Pages",
-          description: "descrip",
-          link_to_picture: `https://picsum.photos/800/601`
-        },
-        {
-          image_id: 3,
-          title: "Miscellaneous",
-          description: "descr",
-          link_to_picture: `https://picsum.photos/800/602`
-        },
-        {
-          image_id: 4,
-          title: "Pages",
-          description:
-            " It’s highly configurable but comes with sensible defaults out of the box.",
-          link_to_picture: `https://picsum.photos/800/604`
+      autoplay: 3000,
+      size: {
+        800: {
+          perView: 1
         }
-      ]
+      },
+      blogData: []
     };
   },
   methods: {
@@ -144,29 +88,35 @@ export default {
           centered: true,
           size: "lg",
           buttonSize: "sm",
+          okVariant: "secondary",
           footerClass: "p-2 border-top-0"
         });
       }
+    },
+    getImages() {
+      axios.get(`${process.env.baseUrl}/api/images`).then(({ data }) => {
+        this.blogData = data;
+      });
     }
+  },
+  mounted() {
+    this.getImages();
   }
 };
 </script>
 
 <style>
-[class^="img"] {
-  display: inline-block;
-  /*
-        Uncomment to see div dimensions
-    
-        border: 1px dotted red;
-    */
+.marg {
+  margin-top: 2em;
 }
-
-[class^="img"] img {
-  display: block;
+.pos {
+  margin-left: 45%;
+  margin-right: auto;
 }
-
-.img-25 img {
-  max-width: 100%;
+@media only screen and (max-width: 600px) {
+  .pos {
+    margin-left: 25%;
+    margin-right: auto;
+  }
 }
 </style>

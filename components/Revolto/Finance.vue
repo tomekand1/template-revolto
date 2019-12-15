@@ -6,11 +6,11 @@
           <div class="col-sm-12">
             <div class="heading-title">
               <h3 class="title iq-tw-7">
-                {{ this.$store.state.dataToPull.about.title
+                {{ this.$store.state.dataToPull.settings.about.title
                 }}
               </h3>
               <p>
-                {{ this.$store.state.dataToPull.about.description
+                {{ this.$store.state.dataToPull.settings.about.description
                 }}
               </p>
             </div>
@@ -22,20 +22,20 @@
       <div slot="cardBody" class="col-lg-6">
         <div class="heading-title left text-left">
           <h3 class="iq-tw-7 iq-mb-25 title">
-            {{ this.$store.state.dataToPull.dotacja.title
+            {{ this.$store.state.dataToPull.settings.dotacja.title
             }}
           </h3>
         </div>
         <p>
-          {{ this.$store.state.dataToPull.dotacja.description1
+          {{ this.$store.state.dataToPull.settings.dotacja.description1
           }}
         </p>
         <p class="iq-mt-20">
-          {{ this.$store.state.dataToPull.dotacja.description2
+          {{ this.$store.state.dataToPull.settings.dotacja.description2
           }}
         </p>
         <h6 class="iq-tw-6 iq-mb-15 iq-mt-25">
-          {{ this.$store.state.dataToPull.dotacja.boldSign
+          {{ this.$store.state.dataToPull.settings.dotacja.boldSign
           }}
         </h6>
       </div>
@@ -60,33 +60,42 @@
       <div slot="cardBody" class="col-lg-6 offset-lg-6">
         <div class="heading-title left text-left">
           <h3 class="iq-tw-7 iq-mb-25 title">
-            {{ this.$store.state.dataToPull.kredyt.title
+            {{ this.$store.state.dataToPull.settings.kredyt.title
             }}
           </h3>
         </div>
         <p>
-          {{ this.$store.state.dataToPull.kredyt.description1
+          {{ this.$store.state.dataToPull.settings.kredyt.description1
           }}
         </p>
         <ul class="iq-mt-40 iq-list">
-          <li v-if="this.$store.state.dataToPull.kredyt.description2" class="iq-tw-6 iq-mb-15">
+          <li
+            v-if="this.$store.state.dataToPull.settings.kredyt.description2"
+            class="iq-tw-6 iq-mb-15"
+          >
             <i class="ion-android-done-all iq-mr-10 iq-font-blue iq-font-30"></i>
             <span class="iq-font-black">
-              {{ this.$store.state.dataToPull.kredyt.description2
+              {{ this.$store.state.dataToPull.settings.kredyt.description2
               }}
             </span>
           </li>
-          <li v-if="this.$store.state.dataToPull.kredyt.description3" class="iq-tw-6 iq-mb-15">
+          <li
+            v-if="this.$store.state.dataToPull.settings.kredyt.description3"
+            class="iq-tw-6 iq-mb-15"
+          >
             <i class="ion-android-done-all iq-mr-10 iq-font-blue iq-font-30"></i>
             <span class="iq-font-black">
-              {{ this.$store.state.dataToPull.kredyt.description3
+              {{ this.$store.state.dataToPull.settings.kredyt.description3
               }}
             </span>
           </li>
-          <li v-if="this.$store.state.dataToPull.kredyt.description4" class="iq-tw-6 iq-mb-15">
+          <li
+            v-if="this.$store.state.dataToPull.settings.kredyt.description4"
+            class="iq-tw-6 iq-mb-15"
+          >
             <i class="ion-android-done-all iq-mr-10 iq-font-blue iq-font-30"></i>
             <span class="iq-font-black">
-              {{ this.$store.state.dataToPull.kredyt.description4
+              {{ this.$store.state.dataToPull.settings.kredyt.description4
               }}
             </span>
           </li>
@@ -97,20 +106,20 @@
       <div slot="cardBody" class="col-lg-6">
         <div class="heading-title left text-left">
           <h3 class="iq-tw-7 iq-mb-25 title">
-            {{ this.$store.state.dataToPull.gotowka.title
+            {{ this.$store.state.dataToPull.settings.gotowka.title
             }}
           </h3>
         </div>
         <p>
-          {{ this.$store.state.dataToPull.gotowka.description1
+          {{ this.$store.state.dataToPull.settings.gotowka.description1
           }}
         </p>
         <p class="iq-mt-20">
-          {{ this.$store.state.dataToPull.gotowka.description2
+          {{ this.$store.state.dataToPull.settings.gotowka.description2
           }}
         </p>
         <h6 class="iq-tw-6 iq-mb-15 iq-mt-25">
-          {{ this.$store.state.dataToPull.gotowka.boldSign
+          {{ this.$store.state.dataToPull.settings.gotowka.boldSign
           }}
         </h6>
       </div>

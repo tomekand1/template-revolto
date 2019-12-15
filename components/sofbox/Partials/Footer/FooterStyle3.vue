@@ -35,7 +35,7 @@
             </div>
           </div>
         </div>
-        <div class="iq-tw-7 iq-pb-10">
+        <div class="col-md-6 col-lg-3 r-mt-30">
           <ul class="info-share">
             <slot name="links" />
           </ul>
@@ -46,8 +46,8 @@
         <div class="col-sm-12 text-center">
           <div class="footer-copyright iq-ptb-20">
             ©
-            <span id="copyright"></span>
-            <a class="text-green">TomAnd.</a>
+            <span id="copyright">2019</span>
+            <a class="text-green">tomekAnd</a>
           </div>
         </div>
       </div>
