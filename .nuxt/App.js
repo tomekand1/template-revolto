@@ -7,27 +7,26 @@ import {
 } from './utils'
 
 import NuxtLoading from './components/nuxt-loading.vue'
-import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
-import '..\\node_modules\\bootstrap\\dist\\css\\bootstrap.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
-import '..\\node_modules\\bootstrap-vue\\dist\\bootstrap-vue.css'
+import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
 
-import '..\\node_modules\\bootstrap\\dist\\css\\bootstrap.min.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
-import '..\\node_modules\\@fortawesome\\fontawesome-free\\css\\all.min.css'
+import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
 
-import '..\\node_modules\\animate.css\\animate.min.css'
+import '../node_modules/animate.css/animate.min.css'
 
-import '..\\assets\\app\\app.css'
+import '../assets/app/app.css'
 
-import '..\\node_modules\\animate.css\\animate.min.css'
+import '../node_modules/animate.css/animate.min.css'
 
-import '..\\node_modules\\owl.carousel\\dist\\assets\\owl.carousel.css'
+import '../node_modules/owl.carousel/dist/assets/owl.carousel.css'
 
-import '..\\node_modules\\owl.carousel\\dist\\assets\\owl.theme.default.css'
+import '../node_modules/owl.carousel/dist/assets/owl.theme.default.css'
 
-import _8fb8d936 from '..\\layouts\\Revolto.vue'
+import _8fb8d936 from '../layouts/Revolto.vue'
 import _6f6c098b from './layouts/default.vue'
 
 const layouts = { "_Revolto": _8fb8d936,"_default": _6f6c098b }
@@ -67,7 +66,7 @@ export default {
       }
     }, [
       loadingEl,
-      h(NuxtBuildIndicator),
+
       transitionEl
     ])
   },
@@ -177,10 +176,6 @@ export default {
     },
 
     setLayout (layout) {
-      if(layout && typeof layout !== 'string') {
-        throw new Error('[nuxt] Avoid using non-string value as layout property.')
-      }
-
       if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }

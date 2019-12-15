@@ -10,8 +10,7 @@
             </div>
           </div>
         </div>
-
-        <vue-glide type="slide" :breakpoints="size" class="glide__arrow">
+        <vue-glide v-if="blogData[0]" type="slide" :breakpoints="size" class="glide__arrow">
           >
           <vue-glide-slide v-for="(blog,index) in blogData" :key="index">
             <CardStyle1>
@@ -25,7 +24,7 @@
                 <p @click="openBmodal(blog)">{{blog.description.slice(0,25)+"..."}}</p>
               </div>
               <div slot="cardFooter">
-                <ul @click="openBmodal(blog)" class="list-inline">
+                <ul class="list-inline">
                   <li class="list-inline-item">
                     <i class="fa fa-calendar" aria-hidden="true" />
                     12 Aug 2019
@@ -106,10 +105,25 @@ export default {
 </script>
 
 <style>
+[class^="img"] {
+  display: inline-block;
+  /*
+        Uncomment to see div dimensions
+    
+        border: 1px dotted red;
+    */
+}
+[class^="img"] img {
+  display: block;
+}
+.img-25 img {
+  max-width: 100%;
+}
 .marg {
   margin-top: 2em;
 }
 .pos {
+  margin-left: 40%;
   margin-left: 45%;
   margin-right: auto;
 }
