@@ -15,7 +15,7 @@
           <vue-glide-slide v-for="(blog,index) in blogData" :key="index">
             <CardStyle1>
               <div slot="cardMedia">
-                <img @click="openBmodal(blog)" :src="blog.link_to_picture" alt="#" />
+                <img class="img" @click="openBmodal(blog)" :src="blog.link_to_picture" alt="#" />
               </div>
               <div slot="cardTitle">
                 <h5 @click="openBmodal(blog)" class="iq-tw-7 iq-mb-10">{{blog.title}}</h5>
@@ -105,19 +105,14 @@ export default {
 </script>
 
 <style>
-[class^="img"] {
-  display: inline-block;
-  /*
-        Uncomment to see div dimensions
-    
-        border: 1px dotted red;
-    */
-}
-[class^="img"] img {
-  display: block;
-}
-.img-25 img {
-  max-width: 100%;
+.img {
+  position: relative;
+  float: left;
+
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .marg {
   margin-top: 2em;
