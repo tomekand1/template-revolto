@@ -3,7 +3,7 @@ export const state = () => ({
     //fotowoltaika
     settings: {
         home: {
-            title: "Panele Sloneczne dla każdego",
+            title: "",
             description: "  kompleksowo projekt, montaż, formalności najlepsze rozwiązania dla domów europejskie podzespoły"
         },
         //finsansowanie
@@ -54,10 +54,21 @@ export const state = () => ({
 
 })
 
+export const mutations = {
+    setSettingsData(state, settings) {
+
+        state.settings = settings
+        console.log(settings)
+    }
+}
+
 export const actions = {
-    getData() {
+    getData(state) {
         axios.get(`${process.env.baseUrl}/api/settings/1`).then(({
             data
-        }) => state.settings = data.settings)
+        }) => {
+            state.commit("setSettingsData", data.settings)
+        })
+
     }
 }

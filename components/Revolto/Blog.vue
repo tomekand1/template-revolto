@@ -10,19 +10,18 @@
             </div>
           </div>
         </div>
-
-        <vue-glide type="slide" :breakpoints="size" class="glide__arrow">
+        <vue-glide v-if="blogData[0]" type="slide" :breakpoints="size" class="glide__arrow">
           >
           <vue-glide-slide v-for="(blog,index) in blogData" :key="index">
             <CardStyle1>
               <div slot="cardMedia">
-                <img @click="openBmodal(blog)" :src="blog.link_to_picture" alt="#" />
+                <img class="img" @click="openBmodal(blog)" :src="blog.link_to_picture" alt="#" />
               </div>
               <div slot="cardTitle">
                 <h5 @click="openBmodal(blog)" class="iq-tw-7 iq-mb-10">{{blog.title}}</h5>
               </div>
               <div slot="cardBody">
-                <p @click="openBmodal(blog)">{{blog.description.slice(0,25)+"..."}}</p>
+                <p @click="openBmodal(blog)">{{blog.description.slice(0,50)+"..."}}</p>
               </div>
               <!-- <div slot="cardFooter">
                 <ul @click="openBmodal(blog)" class="list-inline">
@@ -106,10 +105,20 @@ export default {
 </script>
 
 <style>
+.img {
+  position: relative;
+  float: left;
+
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .marg {
   margin-top: 2em;
 }
 .pos {
+  margin-left: 40%;
   margin-left: 45%;
   margin-right: auto;
 }
