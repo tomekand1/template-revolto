@@ -133,7 +133,7 @@ export async function setContext (app, context) {
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"baseUrl":"http://localhost:9090"}
+      env: {"baseUrl":"http://46.101.131.162:9090"}
     }
     // Only set once
     if (context.req) {

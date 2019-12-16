@@ -4,22 +4,22 @@ module.exports = {
    ** Headers of the page
    */
   env: {
-    baseUrl: 'http://localhost:9090'
+    baseUrl: 'http://46.101.131.162:9090'
   },
   head: {
     title: process.env.npm_package_name || '',
     meta: [{
-      charset: 'utf-8'
-    },
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1'
-    },
-    {
-      hid: 'description',
-      name: 'description',
-      content: process.env.npm_package_description || ''
-    }
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: process.env.npm_package_description || ''
+      }
     ],
     link: [{
       rel: 'icon',
@@ -38,33 +38,33 @@ module.exports = {
    ** Global CSS
    */
   css: [{
-    src: 'bootstrap/dist/css/bootstrap.min.css',
-    lang: 'css'
-  },
-  {
-    src: '@fortawesome/fontawesome-free/css/all.min.css',
-    lang: 'css'
-  },
-  {
-    src: 'animate.css/animate.min.css',
-    lang: 'css'
-  },
-  {
-    src: '~assets/app/app.css',
-    lang: 'css'
-  },
-  {
-    src: 'animate.css/animate.min.css',
-    lang: 'css'
-  },
-  {
-    src: 'owl.carousel/dist/assets/owl.carousel.css',
-    lang: 'css'
-  },
-  {
-    src: 'owl.carousel/dist/assets/owl.theme.default.css',
-    lang: 'css'
-  }
+      src: 'bootstrap/dist/css/bootstrap.min.css',
+      lang: 'css'
+    },
+    {
+      src: '@fortawesome/fontawesome-free/css/all.min.css',
+      lang: 'css'
+    },
+    {
+      src: 'animate.css/animate.min.css',
+      lang: 'css'
+    },
+    {
+      src: '~assets/app/app.css',
+      lang: 'css'
+    },
+    {
+      src: 'animate.css/animate.min.css',
+      lang: 'css'
+    },
+    {
+      src: 'owl.carousel/dist/assets/owl.carousel.css',
+      lang: 'css'
+    },
+    {
+      src: 'owl.carousel/dist/assets/owl.theme.default.css',
+      lang: 'css'
+    }
   ],
   /*
    ** Plugins to load before mounting the App
@@ -104,7 +104,7 @@ module.exports = {
       allChunks: true
     },
     vendor: ['jquery', 'bootstrap'],
-    extend(config, ctx) { }
+    extend(config, ctx) {}
   },
   server: {
     port: 5700 // default: 3000
