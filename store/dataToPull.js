@@ -66,7 +66,9 @@ export const actions = {
     getData(state) {
         axios.get(`${process.env.baseUrl}/api/settings/1`).then(({
             data
-        }) => { state.commit("setSettingsData", data.settings) })
+        }) => {
+            state.commit("setSettingsData", data.settings)
+        })
 
     }
 }

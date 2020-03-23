@@ -21,10 +21,10 @@
                 <h5 @click="openBmodal(blog)" class="iq-tw-7 iq-mb-10">{{blog.title}}</h5>
               </div>
               <div slot="cardBody">
-                <p @click="openBmodal(blog)">{{blog.description.slice(0,25)+"..."}}</p>
+                <p @click="openBmodal(blog)">{{blog.description.slice(0,50)+"..."}}</p>
               </div>
               <!-- <div slot="cardFooter">
-                <ul class="list-inline">
+                <ul @click="openBmodal(blog)" class="list-inline">
                   <li class="list-inline-item">
                     <i class="fa fa-calendar" aria-hidden="true" />
                     Revolto
