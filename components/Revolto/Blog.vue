@@ -23,14 +23,14 @@
               <div slot="cardBody">
                 <p @click="openBmodal(blog)">{{blog.description.slice(0,25)+"..."}}</p>
               </div>
-              <div slot="cardFooter">
+              <!-- <div slot="cardFooter">
                 <ul class="list-inline">
                   <li class="list-inline-item">
                     <i class="fa fa-calendar" aria-hidden="true" />
-                    12 Aug 2019
+                    Revolto
                   </li>
                 </ul>
-              </div>
+              </div>-->
             </CardStyle1>
           </vue-glide-slide>
           <template slot="control">
@@ -94,7 +94,8 @@ export default {
     },
     getImages() {
       axios.get(`${process.env.baseUrl}/api/images`).then(({ data }) => {
-        this.blogData = data;
+        this.blogData = data.reverse();
+        console.log(data[0]);
       });
     }
   },

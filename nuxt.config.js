@@ -4,7 +4,7 @@ module.exports = {
    ** Headers of the page
    */
   env: {
-    baseUrl: 'http://46.101.131.162:9090'
+    baseUrl: 'http://212.159.16.227:9090'
   },
   head: {
     title: process.env.npm_package_name || '',
